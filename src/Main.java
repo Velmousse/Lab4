@@ -1,6 +1,8 @@
 /**
  * Created by DufVi1731300 on 2018-01-29.
  */
+import personnages.*;
+
 import java.util.Scanner;
 
 public class Main {
@@ -44,10 +46,10 @@ public class Main {
     public static Personnage choixPersonnage(String position) {
         int entree = 0;
         System.out.print("Veuillez choisir le " + position + " personnage\n" +
-                " 1- Barbare\n" +
-                " 2- Paladin\n" +
-                " 3- Magicien noir\n" +
-                " 4- Magicien rouge\n" +
+                " 1- personnages.Barbare\n" +
+                " 2- personnages.Paladin\n" +
+                " 3- personnages.Magicien noir\n" +
+                " 4- personnages.Magicien rouge\n" +
                 "> ");
         entree = sc.nextInt();
         System.out.println();

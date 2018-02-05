@@ -1,17 +1,23 @@
+package sorts;
+
+import personnages.Magicien;
+import personnages.Personnage;
+import sorts.Sort;
+
 /**
  * Created by DufVi1731300 on 2018-01-29.
  */
-public class BouleDeFeu extends Sort {
-    public BouleDeFeu() {
+public class PicDeGlace extends Sort {
+    public PicDeGlace() {
         cout = 5;
-        nom = "Boule de Feu";
+        nom = "Pic de Glace";
     }
 
     public int lancerSort(Personnage persoAttaque, Magicien persoQuiAttaque) {
         int degats = 0;
         if (persoQuiAttaque.getPointsDeMagie() >= cout) {
             persoQuiAttaque.setPointsDeMagie(persoQuiAttaque.getPointsDeMagie() - cout);
-            degats = 5;
+            degats = (7 - persoAttaque.getPointsDeDefense());
         }
         return degats;
     }

@@ -1,3 +1,9 @@
+package sorts;
+
+import personnages.Magicien;
+import personnages.Personnage;
+import sorts.Sort;
+
 /**
  * Created by DufVi1731300 on 2018-01-29.
  */
@@ -6,7 +12,7 @@ public class Empoisonnement extends Sort {
 
     public Empoisonnement() {
         cout = 2;
-        nom = "Empoisonnement";
+        nom = "sorts.Empoisonnement";
     }
 
     public int lancerSort(Personnage persoAttaque, Magicien persoQuiAttaque) {
