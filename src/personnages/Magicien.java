@@ -1,6 +1,7 @@
 package personnages;
 
-import personnages.Personnage;
+import armes.*;
+import sorts.*;
 
 /**
  * Created by DufVi1731300 on 2018-01-29.
@@ -8,11 +9,16 @@ import personnages.Personnage;
 public abstract class Magicien extends Personnage {
     protected int pointsDeMagie = 0;
     protected Sort tabSorts[] = new Sort[2];
+    protected Magique arme = null;
 
     public Magicien() {
         pointsDeMagie = 10;
         pointsDeDefense = 1;
         pointsDeVie = 60;
+    }
+
+    public void setArme(Magique arme) {
+        this.arme = arme;
     }
 
     public int getPointsDeMagie() {
@@ -26,6 +32,7 @@ public abstract class Magicien extends Personnage {
     public void attaque(Personnage persoAttaque) {
         Sort sortEmploye = this.tabSorts[(int) ((Math.random() * 3) - 1)];
         int degats = sortEmploye.lancerSort(persoAttaque, this);
+        degats = arme.lancerUnSort(degats);
 
         persoAttaque.setPointsDeVie(persoAttaque.getPointsDeVie() - degats);
         if (persoAttaque.getPointsDeVie() <= 0) persoAttaque.setPointsDeVie(0);

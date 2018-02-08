@@ -6,7 +6,7 @@ import personnages.*;
 import java.util.Scanner;
 
 public class Main {
-    private static Scanner sc = new Scanner(System.in);
+    private static final Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
         Personnage j1 = null;
@@ -57,8 +57,7 @@ public class Main {
             case 1: return new Barbare();
             case 2: return new Paladin();
             case 3: return new MagicienNoir();
-            case 4: return new MagicienRouge();
-            default: return new Barbare(); //Pour qu'il y ait un combat peu importe le choix, même s'il n'est pas valide
+            case 4: default: return new MagicienRouge();
         }
     }
 
