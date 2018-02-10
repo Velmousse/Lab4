@@ -1,5 +1,4 @@
 package personnages;
-
 import personnages.Personnage;
 
 /**
@@ -8,9 +7,7 @@ import personnages.Personnage;
 public abstract class Guerrier extends Personnage {
     protected int pointsDeForce = 0;
 
-    public void attaque(Personnage persoAttaque) {
-        int degats = (this.pointsDeForce * 2 - persoAttaque.getPointsDeDefense());
-
+    public void attaque(Personnage persoAttaque, int degats) {
         persoAttaque.setPointsDeVie(persoAttaque.getPointsDeVie() - degats);
         if (persoAttaque.getPointsDeVie() <= 0) persoAttaque.setPointsDeVie(0);
         System.out.print("Le " + this.getNom() + " attaque!\n" +
