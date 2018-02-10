@@ -10,22 +10,20 @@ public class Main {
     private static final Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Personnage j1 = null, j2 = null, jc = j1;
+        Personnage joueur[] = new Personnage[2];
         String position = "premier";
 
         for (int i = 0; i < 2; i++) {
-            jc = choixPersonnage(position);
+            joueur[i] = choixPersonnage(position);
             System.out.println("\nQuelle arme voulez-nous lui assigner?");
-            if (jc instanceof Barbare) ((Barbare) jc).setArme(choixArmeContondant());
-            else if (jc instanceof Paladin) ((Paladin) jc).setArme(choixArmeTranchant());
-            else ((Magicien) jc).setArme(choixArmeMagique());
+            if (joueur[i] instanceof Barbare) ((Barbare) joueur[i]).setArme(choixArmeContondant());
+            else if (joueur[i] instanceof Paladin) ((Paladin) joueur[i]).setArme(choixArmeTranchant());
+            else ((Magicien) joueur[i]).setArme(choixArmeMagique());
             System.out.println();
 
-            if (i == 0) j1 = jc;
-            else if (i == 1) j2 = jc;
             position = "deuxième";
         }
-        combat(j1, j2);
+        combat(joueur[0], joueur[1]);
 
         sc.close();
     }
