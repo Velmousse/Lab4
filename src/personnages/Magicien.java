@@ -32,7 +32,7 @@ public abstract class Magicien extends Personnage {
     public void attaque(Personnage persoAttaque) {
         Sort sortEmploye = this.tabSorts[(int) ((Math.random() * 3) - 1)];
         int degats = sortEmploye.lancerSort(persoAttaque, this);
-        degats = arme.lancerUnSort(degats);
+        if (!(sortEmploye instanceof MortSubite))degats = arme.lancerUnSort(degats);
 
         persoAttaque.setPointsDeVie(persoAttaque.getPointsDeVie() - degats);
         if (persoAttaque.getPointsDeVie() <= 0) persoAttaque.setPointsDeVie(0);
